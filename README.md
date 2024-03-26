@@ -8,10 +8,10 @@ The game allows two players to take turns placing "X" and "O" on a 3x3 grid, aim
 ![image](https://github.com/susannacifani/TicTacToe-Unity/assets/73530772/ba2ffa47-7349-4f64-9f73-2217ba3cb761)
 
 # Examples
-## Player X wins
+## Player X wins the first round
 ![image](https://github.com/susannacifani/TicTacToe-Unity/assets/73530772/628e744c-3943-4679-9f34-a686666a1e5b)
 
-## Player O wins
+## Player O wins the third round
 ![image](https://github.com/susannacifani/TicTacToe-Unity/assets/73530772/16ab99b7-0a66-46a4-a8e9-6d0429cbc7e8)
 
 You can click Reset to make a new round keeping the score (like in the last example).
