@@ -19,5 +19,6 @@ You can click Reset to make a new round keeping the score (like in the last exam
 Or you can click New Game to start a new game and clear the score.
 
 # To play the game
-Download the file .exe and double click on it to play the game.
+Download the file .exe (Executable/tic tac toe.exe) and double click on it to play the game.
+
 
