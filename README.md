@@ -14,5 +14,7 @@ The game allows two players to take turns placing "X" and "O" on a 3x3 grid, aim
 ## Player O wins the third round
 ![image](https://github.com/susannacifani/TicTacToe-Unity/assets/73530772/16ab99b7-0a66-46a4-a8e9-6d0429cbc7e8)
 
-You can click Reset to make a new round keeping the score (like in the last example). \\
+
+You can click Reset to make a new round keeping the score (like in the last example).
+
 Or you can click New Game to start a new game and clear the score.
