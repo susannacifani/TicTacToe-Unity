@@ -1,5 +1,5 @@
 # Tic Tac Toe in Unity
-This project implements the game of Tic Tac Toe in Unity using simple 2D graphics.
+This project implements the game of Tic Tac Toe in Unity using simple 2D graphics.  
 The game allows two players to take turns placing "X" and "O" on a 3x3 grid, aiming to achieve a row, column, or diagonal of three identical marks to win the game.
 
 
@@ -16,5 +16,4 @@ The game allows two players to take turns placing "X" and "O" on a 3x3 grid, aim
 
 
 You can click Reset to make a new round keeping the score (like in the last example).
-
 Or you can click New Game to start a new game and clear the score.
