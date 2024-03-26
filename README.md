@@ -17,3 +17,7 @@ The game allows two players to take turns placing "X" and "O" on a 3x3 grid, aim
 
 You can click Reset to make a new round keeping the score (like in the last example).  
 Or you can click New Game to start a new game and clear the score.
+
+# To play the game
+Download the file .exe and double click on it to play the game.
+
