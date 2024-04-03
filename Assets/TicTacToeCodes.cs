@@ -9,6 +9,16 @@ public class TicTacToeCodes : MonoBehaviour
     Boolean checker;
     int plusone;
 
+    Boolean btnWritten1;
+    Boolean btnWritten2;
+    Boolean btnWritten3;
+    Boolean btnWritten4;
+    Boolean btnWritten5;
+    Boolean btnWritten6;
+    Boolean btnWritten7;
+    Boolean btnWritten8;
+    Boolean btnWritten9;
+
     public Text btnText1 = null;
     public Text btnText2 = null;
     public Text btnText3 = null;
@@ -184,129 +194,166 @@ public class TicTacToeCodes : MonoBehaviour
 
     public void btnText1_Click()
     {
-        if (checker == false)
+        if (btnWritten1 == false)
         {
-            btnText1.text = "X";
-            checker = true;
+            if (checker == false)
+            {
+                btnText1.text = "X";
+                checker = true;
+            }
+            else
+            {
+                btnText1.text = "O";
+                checker = false;
+            }
+            btnWritten1 = true;
+            score();
         }
-        else
-        {
-            btnText1.text = "O";
-            checker = false;
-        }
-        score();
+
     }
     public void btnText2_Click()
     {
-        if (checker == false)
+        if (btnWritten2 == false)
         {
-            btnText2.text = "X";
-            checker = true;
+            if (checker == false)
+            {
+                btnText2.text = "X";
+                checker = true;
+            }
+            else
+            {
+                btnText2.text = "O";
+                checker = false;
+            }
+            btnWritten2 = true;
+            score();
         }
-        else
-        {
-            btnText2.text = "O";
-            checker = false;
-        }
-        score();
     }
     public void btnText3_Click()
     {
-        if (checker == false)
+        if (btnWritten3 == false)
         {
-            btnText3.text = "X";
-            checker = true;
+            if (checker == false)
+            {
+                btnText3.text = "X";
+                checker = true;
+            }
+            else
+            {
+                btnText3.text = "O";
+                checker = false;
+            }
+            btnWritten3 = true;
+            score();
         }
-        else
-        {
-            btnText3.text = "O";
-            checker = false;
-        }
-        score();
     }
     public void btnText4_Click()
     {
-        if (checker == false)
+        if (btnWritten4 == false)
         {
-            btnText4.text = "X";
-            checker = true;
+            if (checker == false)
+            {
+                btnText4.text = "X";
+                checker = true;
+            }
+            else
+            {
+                btnText4.text = "O";
+                checker = false;
+            }
+            btnWritten4 = true;
+            score();
         }
-        else
-        {
-            btnText4.text = "O";
-            checker = false;
-        }
-        score();
     }
     public void btnText5_Click()
     {
-        if (checker == false)
+        if (btnWritten5 == false)
         {
-            btnText5.text = "X";
-            checker = true;
+            if (checker == false)
+            {
+                btnText5.text = "X";
+                checker = true;
+            }
+            else
+            {
+                btnText5.text = "O";
+                checker = false;
+            }
+            btnWritten5 = true;
+            score();
         }
-        else
-        {
-            btnText5.text = "O";
-            checker = false;
-        }
-        score();
     }
     public void btnText6_Click()
     {
-        if (checker == false)
+        if (btnWritten6 == false)
         {
-            btnText6.text = "X";
-            checker = true;
+            if (checker == false)
+            {
+                btnText6.text = "X";
+                checker = true;
+            }
+            else
+            {
+                btnText6.text = "O";
+                checker = false;
+            }
+            btnWritten6 = true;
+            score();
         }
-        else
-        {
-            btnText6.text = "O";
-            checker = false;
-        }
-        score();
     }
     public void btnText7_Click()
     {
-        if (checker == false)
+        if (btnWritten7 == false)
         {
-            btnText7.text = "X";
-            checker = true;
+            if (checker == false)
+            {
+                btnText7.text = "X";
+                checker = true;
+            }
+            else
+            {
+                btnText7.text = "O";
+                checker = false;
+            }
+            btnWritten7 = true;
+            score();
         }
-        else
-        {
-            btnText7.text = "O";
-            checker = false;
-        }
-        score();
     }
     public void btnText8_Click()
     {
-        if (checker == false)
+        if (btnWritten8 == false)
         {
-            btnText8.text = "X";
-            checker = true;
+            if (checker == false)
+            {
+                btnText8.text = "X";
+                checker = true;
+            }
+            else
+            {
+                btnText8.text = "O";
+                checker = false;
+            }
+            btnWritten8 = true;
+            score();
         }
-        else
-        {
-            btnText8.text = "O";
-            checker = false;
-        }
-        score();
     }
     public void btnText9_Click()
     {
-        if (checker == false)
+        if (btnWritten9 == false)
         {
-            btnText9.text = "X";
-            checker = true;
+            if (checker == false)
+            {
+                btnText9.text = "X";
+                checker = true;
+            }
+            else
+            {
+                btnText9.text = "O";
+                checker = false;
+            }
+            btnWritten9 = true;
+            score();
         }
-        else
-        {
-            btnText9.text = "O";
-            checker = false;
-        }
-        score();
     }
 
     public void btnResetGame_Click()
@@ -321,6 +368,15 @@ public class TicTacToeCodes : MonoBehaviour
         btnText8.text = "";
         btnText9.text = "";
         msgFeedback.text = "";
+        btnWritten1 = false;
+        btnWritten2 = false;
+        btnWritten3 = false;
+        btnWritten4 = false;
+        btnWritten5 = false;
+        btnWritten6 = false;
+        btnWritten7 = false;
+        btnWritten8 = false;
+        btnWritten9 = false;
 
         btnText1.color = Color.black; 
         btnText2.color = Color.black;
