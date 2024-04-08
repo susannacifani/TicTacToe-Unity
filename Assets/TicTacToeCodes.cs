@@ -32,20 +32,51 @@ public class TicTacToeCodes : MonoBehaviour
     public Text btnResetGame = null;
     public Text btnNewGame = null;
     public Text msgFeedback = null;
+    public Text msgTurn = null;
 
     public Text txtPlayerX;
     public Text txtPlayerO;
 
+
+    public void Draw()
+    {
+        msgFeedback.text = "It's a draw!";
+        msgTurn.text = "";
+    }
+
+    public void WinnerX(Text btnTextA, Text btnTextB, Text btnTextC)
+    {
+        btnTextA.color = Color.red;
+        btnTextB.color = Color.red;
+        btnTextC.color = Color.red;
+        msgFeedback.text = "The winner is Player X";
+        plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
+        txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
+        msgTurn.text = "";
+    }
+
+    public void WinnerO(Text btnTextA, Text btnTextB, Text btnTextC)
+    {
+        btnTextA.color = Color.red;
+        btnTextB.color = Color.red;
+        btnTextC.color = Color.red;
+        msgFeedback.text = "The winner is Player O";
+        plusone = int.Parse(txtPlayerO.text);
+        txtPlayerO.text = Convert.ToString(plusone + 1); 
+        msgTurn.text = "";
+    }
+
     public void score()
     {
+        //========================== Draw =========================================
+        if (btnWritten1 && btnWritten2 && btnWritten3 && btnWritten4 && btnWritten5 && btnWritten6 && btnWritten7 && btnWritten8 && btnWritten9)
+        {
+            Draw();
+        }
+        //========================== Player X =========================================
         if (btnText1.text == "X" && btnText2.text == "X" && btnText3.text == "X")
         {
-            btnText1.color = Color.red;
-            btnText2.color = Color.red;
-            btnText3.color = Color.red;
-            msgFeedback.text = "The winner is Player X";
-            plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
-            txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
+            WinnerX(btnText1, btnText2, btnText3);
             btnWritten4 = true;
             btnWritten5 = true;
             btnWritten6 = true;
@@ -55,12 +86,7 @@ public class TicTacToeCodes : MonoBehaviour
         }
         if (btnText1.text == "X" && btnText4.text == "X" && btnText7.text == "X")
         {
-            btnText1.color = Color.red;
-            btnText4.color = Color.red;
-            btnText7.color = Color.red;
-            msgFeedback.text = "The winner is Player X";
-            plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
-            txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
+            WinnerX(btnText1, btnText4, btnText7); 
             btnWritten2 = true;
             btnWritten3 = true;
             btnWritten5 = true;
@@ -70,12 +96,7 @@ public class TicTacToeCodes : MonoBehaviour
         }
         if (btnText1.text == "X" && btnText5.text == "X" && btnText9.text == "X")
         {
-            btnText1.color = Color.red;
-            btnText5.color = Color.red;
-            btnText9.color = Color.red;
-            msgFeedback.text = "The winner is Player X";
-            plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
-            txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
+            WinnerX(btnText1, btnText5, btnText9); 
             btnWritten2 = true;
             btnWritten3 = true;
             btnWritten4 = true;
@@ -85,12 +106,7 @@ public class TicTacToeCodes : MonoBehaviour
         }
         if (btnText3.text == "X" && btnText5.text == "X" && btnText7.text == "X")
         {
-            btnText3.color = Color.red;
-            btnText5.color = Color.red;
-            btnText7.color = Color.red;
-            msgFeedback.text = "The winner is Player X";
-            plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
-            txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
+            WinnerX(btnText3, btnText5, btnText7); 
             btnWritten1 = true;
             btnWritten2 = true;
             btnWritten4 = true;
@@ -100,12 +116,7 @@ public class TicTacToeCodes : MonoBehaviour
         }
         if (btnText2.text == "X" && btnText5.text == "X" && btnText8.text == "X")
         {
-            btnText2.color = Color.red;
-            btnText5.color = Color.red;
-            btnText8.color = Color.red;
-            msgFeedback.text = "The winner is Player X";
-            plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
-            txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
+            WinnerX(btnText2, btnText5, btnText8); 
             btnWritten1 = true;
             btnWritten3 = true;
             btnWritten4 = true;
@@ -115,12 +126,7 @@ public class TicTacToeCodes : MonoBehaviour
         }
         if (btnText3.text == "X" && btnText6.text == "X" && btnText9.text == "X")
         {
-            btnText3.color = Color.red;
-            btnText6.color = Color.red;
-            btnText9.color = Color.red;
-            msgFeedback.text = "The winner is Player X";
-            plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
-            txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
+            WinnerX(btnText3, btnText6, btnText9); 
             btnWritten1 = true;
             btnWritten2 = true;
             btnWritten4 = true;
@@ -130,12 +136,7 @@ public class TicTacToeCodes : MonoBehaviour
         }
         if (btnText4.text == "X" && btnText5.text == "X" && btnText6.text == "X")
         {
-            btnText4.color = Color.red;
-            btnText5.color = Color.red;
-            btnText6.color = Color.red;
-            msgFeedback.text = "The winner is Player X";
-            plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
-            txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
+            WinnerX(btnText4, btnText5, btnText6); 
             btnWritten1 = true;
             btnWritten2 = true;
             btnWritten3 = true;
@@ -145,12 +146,7 @@ public class TicTacToeCodes : MonoBehaviour
         }
         if (btnText7.text == "X" && btnText8.text == "X" && btnText9.text == "X")
         {
-            btnText7.color = Color.red;
-            btnText8.color = Color.red;
-            btnText9.color = Color.red;
-            msgFeedback.text = "The winner is Player X";
-            plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
-            txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
+            WinnerX(btnText7, btnText8, btnText9); 
             btnWritten1 = true;
             btnWritten2 = true;
             btnWritten3 = true;
@@ -161,12 +157,7 @@ public class TicTacToeCodes : MonoBehaviour
         //============================Player O================================
         if (btnText1.text == "O" && btnText2.text == "O" && btnText3.text == "O")
         {
-            btnText1.color = Color.red;
-            btnText2.color = Color.red;
-            btnText3.color = Color.red;
-            msgFeedback.text = "The winner is Player O";
-            plusone = int.Parse(txtPlayerO.text);
-            txtPlayerO.text = Convert.ToString(plusone + 1);
+            WinnerO(btnText1, btnText2, btnText3);
             btnWritten4 = true;
             btnWritten5 = true;
             btnWritten6 = true;
@@ -177,12 +168,7 @@ public class TicTacToeCodes : MonoBehaviour
 
         if (btnText1.text == "O" && btnText4.text == "O" && btnText7.text == "O")
         {
-            btnText1.color = Color.red;
-            btnText4.color = Color.red;
-            btnText7.color = Color.red;
-            msgFeedback.text = "The winner is Player O";
-            plusone = int.Parse(txtPlayerO.text);
-            txtPlayerO.text = Convert.ToString(plusone + 1);
+            WinnerO(btnText1, btnText4, btnText7);
             btnWritten2 = true;
             btnWritten3 = true;
             btnWritten5 = true;
@@ -193,12 +179,7 @@ public class TicTacToeCodes : MonoBehaviour
 
         if (btnText1.text == "O" && btnText5.text == "O" && btnText9.text == "O")
         {
-            btnText1.color = Color.red;
-            btnText5.color = Color.red;
-            btnText9.color = Color.red;
-            msgFeedback.text = "The winner is Player O";
-            plusone = int.Parse(txtPlayerO.text);
-            txtPlayerO.text = Convert.ToString(plusone + 1);
+            WinnerO(btnText1, btnText5, btnText9);
             btnWritten2 = true;
             btnWritten3 = true;
             btnWritten4 = true;
@@ -209,12 +190,7 @@ public class TicTacToeCodes : MonoBehaviour
 
         if (btnText3.text == "O" && btnText5.text == "O" && btnText7.text == "O")
         {
-            btnText3.color = Color.red;
-            btnText5.color = Color.red;
-            btnText7.color = Color.red;
-            msgFeedback.text = "The winner is Player O";
-            plusone = int.Parse(txtPlayerO.text);
-            txtPlayerO.text = Convert.ToString(plusone + 1);
+            WinnerO(btnText3, btnText5, btnText7);
             btnWritten1 = true;
             btnWritten2 = true;
             btnWritten4 = true;
@@ -225,12 +201,7 @@ public class TicTacToeCodes : MonoBehaviour
 
         if (btnText2.text == "O" && btnText5.text == "O" && btnText8.text == "O")
         {
-            btnText2.color = Color.red;
-            btnText5.color = Color.red;
-            btnText8.color = Color.red;
-            msgFeedback.text = "The winner is Player O";
-            plusone = int.Parse(txtPlayerO.text);
-            txtPlayerO.text = Convert.ToString(plusone + 1);
+            WinnerO(btnText2, btnText5, btnText8);
             btnWritten1 = true;
             btnWritten3 = true;
             btnWritten4 = true;
@@ -241,12 +212,7 @@ public class TicTacToeCodes : MonoBehaviour
 
         if (btnText3.text == "O" && btnText6.text == "O" && btnText9.text == "O")
         {
-            btnText3.color = Color.red;
-            btnText6.color = Color.red;
-            btnText9.color = Color.red;
-            msgFeedback.text = "The winner is Player O";
-            plusone = int.Parse(txtPlayerO.text);
-            txtPlayerO.text = Convert.ToString(plusone + 1);
+            WinnerO(btnText3, btnText6, btnText9);
             btnWritten1 = true;
             btnWritten2 = true;
             btnWritten4 = true;
@@ -257,12 +223,7 @@ public class TicTacToeCodes : MonoBehaviour
 
         if (btnText4.text == "O" && btnText5.text == "O" && btnText6.text == "O")
         {
-            btnText4.color = Color.red;
-            btnText5.color = Color.red;
-            btnText6.color = Color.red;
-            msgFeedback.text = "The winner is Player O";
-            plusone = int.Parse(txtPlayerO.text);
-            txtPlayerO.text = Convert.ToString(plusone + 1);
+            WinnerO(btnText4, btnText5, btnText6);
             btnWritten1 = true;
             btnWritten2 = true;
             btnWritten3 = true;
@@ -273,12 +234,7 @@ public class TicTacToeCodes : MonoBehaviour
 
         if (btnText7.text == "O" && btnText8.text == "O" && btnText9.text == "O")
         {
-            btnText7.color = Color.red;
-            btnText8.color = Color.red;
-            btnText9.color = Color.red;
-            msgFeedback.text = "The winner is Player O";
-            plusone = int.Parse(txtPlayerO.text);
-            txtPlayerO.text = Convert.ToString(plusone + 1);
+            WinnerO(btnText7, btnText8, btnText9);
             btnWritten1 = true;
             btnWritten2 = true;
             btnWritten3 = true;
@@ -286,6 +242,7 @@ public class TicTacToeCodes : MonoBehaviour
             btnWritten5 = true;
             btnWritten6 = true;
         }
+
     }
 
     public void btnText1_Click()
@@ -296,11 +253,13 @@ public class TicTacToeCodes : MonoBehaviour
             {
                 btnText1.text = "X";
                 checker = true;
+                msgTurn.text = "O TURN";
             }
             else
             {
                 btnText1.text = "O";
                 checker = false;
+                msgTurn.text = "X TURN";
             }
             btnWritten1 = true;
             score();
@@ -315,11 +274,13 @@ public class TicTacToeCodes : MonoBehaviour
             {
                 btnText2.text = "X";
                 checker = true;
+                msgTurn.text = "O TURN";
             }
             else
             {
                 btnText2.text = "O";
                 checker = false;
+                msgTurn.text = "X TURN";
             }
             btnWritten2 = true;
             score();
@@ -333,11 +294,13 @@ public class TicTacToeCodes : MonoBehaviour
             {
                 btnText3.text = "X";
                 checker = true;
+                msgTurn.text = "O TURN";
             }
             else
             {
                 btnText3.text = "O";
                 checker = false;
+                msgTurn.text = "X TURN";
             }
             btnWritten3 = true;
             score();
@@ -351,11 +314,13 @@ public class TicTacToeCodes : MonoBehaviour
             {
                 btnText4.text = "X";
                 checker = true;
+                msgTurn.text = "O TURN";
             }
             else
             {
                 btnText4.text = "O";
                 checker = false;
+                msgTurn.text = "X TURN";
             }
             btnWritten4 = true;
             score();
@@ -369,11 +334,13 @@ public class TicTacToeCodes : MonoBehaviour
             {
                 btnText5.text = "X";
                 checker = true;
+                msgTurn.text = "O TURN";
             }
             else
             {
                 btnText5.text = "O";
                 checker = false;
+                msgTurn.text = "X TURN";
             }
             btnWritten5 = true;
             score();
@@ -387,11 +354,13 @@ public class TicTacToeCodes : MonoBehaviour
             {
                 btnText6.text = "X";
                 checker = true;
+                msgTurn.text = "O TURN";
             }
             else
             {
                 btnText6.text = "O";
                 checker = false;
+                msgTurn.text = "X TURN";
             }
             btnWritten6 = true;
             score();
@@ -405,11 +374,13 @@ public class TicTacToeCodes : MonoBehaviour
             {
                 btnText7.text = "X";
                 checker = true;
+                msgTurn.text = "O TURN";
             }
             else
             {
                 btnText7.text = "O";
                 checker = false;
+                msgTurn.text = "X TURN";
             }
             btnWritten7 = true;
             score();
@@ -423,11 +394,13 @@ public class TicTacToeCodes : MonoBehaviour
             {
                 btnText8.text = "X";
                 checker = true;
+                msgTurn.text = "O TURN";
             }
             else
             {
                 btnText8.text = "O";
                 checker = false;
+                msgTurn.text = "X TURN";
             }
             btnWritten8 = true;
             score();
@@ -441,11 +414,13 @@ public class TicTacToeCodes : MonoBehaviour
             {
                 btnText9.text = "X";
                 checker = true;
+                msgTurn.text = "O TURN";
             }
             else
             {
                 btnText9.text = "O";
                 checker = false;
+                msgTurn.text = "X TURN";
             }
             btnWritten9 = true;
             score();
@@ -464,6 +439,7 @@ public class TicTacToeCodes : MonoBehaviour
         btnText8.text = "";
         btnText9.text = "";
         msgFeedback.text = "";
+        msgTurn.text = "X TURN";
         btnWritten1 = false;
         btnWritten2 = false;
         btnWritten3 = false;
