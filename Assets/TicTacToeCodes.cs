@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class TicTacToeCodes : MonoBehaviour
 {
@@ -81,7 +82,7 @@ public class TicTacToeCodes : MonoBehaviour
         btnWritten9 = true;
     }
 
-    public void score()
+    public void Score()
     {
         //========================== Draw =========================================
         if (btnWritten1 && btnWritten2 && btnWritten3 && btnWritten4 && btnWritten5 && btnWritten6 && btnWritten7 && btnWritten8 && btnWritten9)
@@ -189,188 +190,62 @@ public class TicTacToeCodes : MonoBehaviour
 
     }
 
-
+    public void btnText_Click(ref bool btnWritten, Text btnText)
+    {
+        if (btnWritten == false)
+        {
+            if (checker == false)
+            {
+                btnText.text = "X";
+                checker = true;
+                msgTurn.text = "O TURN";
+            }
+            else
+            {
+                btnText.text = "O";
+                checker = false;
+                msgTurn.text = "X TURN";
+            }
+            btnWritten = true;
+            Score();
+        }
+    }
 
     public void btnText1_Click()
     {
-        if (btnWritten1 == false)
-        {
-            if (checker == false)
-            {
-                btnText1.text = "X";
-                checker = true;
-                msgTurn.text = "O TURN";
-            }
-            else
-            {
-                btnText1.text = "O";
-                checker = false;
-                msgTurn.text = "X TURN";
-            }
-            btnWritten1 = true;
-            score();
-        }
-
+        btnText_Click(ref btnWritten1, btnText1);
     }
     public void btnText2_Click()
     {
-        if (btnWritten2 == false)
-        {
-            if (checker == false)
-            {
-                btnText2.text = "X";
-                checker = true;
-                msgTurn.text = "O TURN";
-            }
-            else
-            {
-                btnText2.text = "O";
-                checker = false;
-                msgTurn.text = "X TURN";
-            }
-            btnWritten2 = true;
-            score();
-        }
+        btnText_Click(ref btnWritten2, btnText2);
     }
     public void btnText3_Click()
     {
-        if (btnWritten3 == false)
-        {
-            if (checker == false)
-            {
-                btnText3.text = "X";
-                checker = true;
-                msgTurn.text = "O TURN";
-            }
-            else
-            {
-                btnText3.text = "O";
-                checker = false;
-                msgTurn.text = "X TURN";
-            }
-            btnWritten3 = true;
-            score();
-        }
+        btnText_Click(ref btnWritten3, btnText3);
     }
     public void btnText4_Click()
     {
-        if (btnWritten4 == false)
-        {
-            if (checker == false)
-            {
-                btnText4.text = "X";
-                checker = true;
-                msgTurn.text = "O TURN";
-            }
-            else
-            {
-                btnText4.text = "O";
-                checker = false;
-                msgTurn.text = "X TURN";
-            }
-            btnWritten4 = true;
-            score();
-        }
+        btnText_Click(ref btnWritten4, btnText4);
     }
     public void btnText5_Click()
     {
-        if (btnWritten5 == false)
-        {
-            if (checker == false)
-            {
-                btnText5.text = "X";
-                checker = true;
-                msgTurn.text = "O TURN";
-            }
-            else
-            {
-                btnText5.text = "O";
-                checker = false;
-                msgTurn.text = "X TURN";
-            }
-            btnWritten5 = true;
-            score();
-        }
+        btnText_Click(ref btnWritten5, btnText5);
     }
     public void btnText6_Click()
     {
-        if (btnWritten6 == false)
-        {
-            if (checker == false)
-            {
-                btnText6.text = "X";
-                checker = true;
-                msgTurn.text = "O TURN";
-            }
-            else
-            {
-                btnText6.text = "O";
-                checker = false;
-                msgTurn.text = "X TURN";
-            }
-            btnWritten6 = true;
-            score();
-        }
+        btnText_Click(ref btnWritten6, btnText6);
     }
     public void btnText7_Click()
     {
-        if (btnWritten7 == false)
-        {
-            if (checker == false)
-            {
-                btnText7.text = "X";
-                checker = true;
-                msgTurn.text = "O TURN";
-            }
-            else
-            {
-                btnText7.text = "O";
-                checker = false;
-                msgTurn.text = "X TURN";
-            }
-            btnWritten7 = true;
-            score();
-        }
+        btnText_Click(ref btnWritten7, btnText7);
     }
     public void btnText8_Click()
     {
-        if (btnWritten8 == false)
-        {
-            if (checker == false)
-            {
-                btnText8.text = "X";
-                checker = true;
-                msgTurn.text = "O TURN";
-            }
-            else
-            {
-                btnText8.text = "O";
-                checker = false;
-                msgTurn.text = "X TURN";
-            }
-            btnWritten8 = true;
-            score();
-        }
+        btnText_Click(ref btnWritten8, btnText8);
     }
     public void btnText9_Click()
     {
-        if (btnWritten9 == false)
-        {
-            if (checker == false)
-            {
-                btnText9.text = "X";
-                checker = true;
-                msgTurn.text = "O TURN";
-            }
-            else
-            {
-                btnText9.text = "O";
-                checker = false;
-                msgTurn.text = "X TURN";
-            }
-            btnWritten9 = true;
-            score();
-        }
+        btnText_Click(ref btnWritten9, btnText9);
     }
 
     public void btnResetGame_Click()
@@ -384,8 +259,10 @@ public class TicTacToeCodes : MonoBehaviour
         btnText7.text = "";
         btnText8.text = "";
         btnText9.text = "";
+
         msgFeedback.text = "";
         msgTurn.text = "X TURN";
+
         checker = false;
         btnWritten1 = false;
         btnWritten2 = false;
@@ -396,7 +273,6 @@ public class TicTacToeCodes : MonoBehaviour
         btnWritten7 = false;
         btnWritten8 = false;
         btnWritten9 = false;
-        
 
         btnText1.color = Color.black;
         btnText2.color = Color.black;
@@ -408,6 +284,7 @@ public class TicTacToeCodes : MonoBehaviour
         btnText8.color = Color.black;
         btnText9.color = Color.black;
     }
+
 
     public void btnNewGame_Click()
     {
