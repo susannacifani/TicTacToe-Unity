@@ -7,18 +7,18 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class TicTacToeCodes : MonoBehaviour
 {
-    public Boolean checker;
+    private Boolean checker;
     int plusone;
 
-    public Boolean btnWritten1;
-    public Boolean btnWritten2;
-    public Boolean btnWritten3;
-    public Boolean btnWritten4;
-    public Boolean btnWritten5;
-    public Boolean btnWritten6;
-    public Boolean btnWritten7;
-    public Boolean btnWritten8;
-    public Boolean btnWritten9;
+    private Boolean btnWritten1;
+    private Boolean btnWritten2;
+    private Boolean btnWritten3;
+    private Boolean btnWritten4;
+    private Boolean btnWritten5;
+    private Boolean btnWritten6;
+    private Boolean btnWritten7;
+    private Boolean btnWritten8;
+    private Boolean btnWritten9;
 
     public Text btnText1 = null;
     public Text btnText2 = null;
@@ -30,8 +30,6 @@ public class TicTacToeCodes : MonoBehaviour
     public Text btnText8 = null;
     public Text btnText9 = null;
 
-    public Text btnResetGame = null;
-    public Text btnNewGame = null;
     public Text msgFeedback = null;
     public Text msgTurn = null;
 
