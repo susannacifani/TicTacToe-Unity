@@ -6,18 +6,18 @@ using System;
 
 public class TicTacToeCodes : MonoBehaviour
 {
-    Boolean checker;
+    public Boolean checker;
     int plusone;
 
-    Boolean btnWritten1;
-    Boolean btnWritten2;
-    Boolean btnWritten3;
-    Boolean btnWritten4;
-    Boolean btnWritten5;
-    Boolean btnWritten6;
-    Boolean btnWritten7;
-    Boolean btnWritten8;
-    Boolean btnWritten9;
+    public Boolean btnWritten1;
+    public Boolean btnWritten2;
+    public Boolean btnWritten3;
+    public Boolean btnWritten4;
+    public Boolean btnWritten5;
+    public Boolean btnWritten6;
+    public Boolean btnWritten7;
+    public Boolean btnWritten8;
+    public Boolean btnWritten9;
 
     public Text btnText1 = null;
     public Text btnText2 = null;
@@ -53,6 +53,7 @@ public class TicTacToeCodes : MonoBehaviour
         plusone = int.Parse(txtPlayerX.text); //viene preso il testo contenuto nella variabile txtPlayerX.text e viene convertito in un numero intero (int) utilizzando il metodo int.Parse()
         txtPlayerX.text = Convert.ToString(plusone + 1); //viene preso il valore attuale di plusone, viene sommato 1 e il risultato viene convertito in una stringa utilizzando il metodo Convert.ToString(). Questa stringa risultante viene quindi assegnata di nuovo alla variabile txtPlayerX.text
         msgTurn.text = "";
+        AllBtnToTrue();
     }
 
     public void WinnerO(Text btnTextA, Text btnTextB, Text btnTextC)
@@ -64,6 +65,20 @@ public class TicTacToeCodes : MonoBehaviour
         plusone = int.Parse(txtPlayerO.text);
         txtPlayerO.text = Convert.ToString(plusone + 1); 
         msgTurn.text = "";
+        AllBtnToTrue();
+    }
+
+    public void AllBtnToTrue()
+    {
+        btnWritten1 = true;
+        btnWritten2 = true;
+        btnWritten3 = true;
+        btnWritten4 = true;
+        btnWritten5 = true;
+        btnWritten6 = true;
+        btnWritten7 = true;
+        btnWritten8 = true;
+        btnWritten9 = true;
     }
 
     public void score()
@@ -73,177 +88,108 @@ public class TicTacToeCodes : MonoBehaviour
         {
             Draw();
         }
-        //========================== Player X =========================================
-        if (btnText1.text == "X" && btnText2.text == "X" && btnText3.text == "X")
+        //========================== Players =========================================
+        //Case 1: 1-2-3
+        if (btnText1 != null && btnText1.text == btnText2.text && btnText2.text == btnText3.text)
         {
-            WinnerX(btnText1, btnText2, btnText3);
-            btnWritten4 = true;
-            btnWritten5 = true;
-            btnWritten6 = true;
-            btnWritten7 = true;
-            btnWritten8 = true;
-            btnWritten9 = true;
-        }
-        if (btnText1.text == "X" && btnText4.text == "X" && btnText7.text == "X")
-        {
-            WinnerX(btnText1, btnText4, btnText7); 
-            btnWritten2 = true;
-            btnWritten3 = true;
-            btnWritten5 = true;
-            btnWritten6 = true;
-            btnWritten8 = true;
-            btnWritten9 = true;
-        }
-        if (btnText1.text == "X" && btnText5.text == "X" && btnText9.text == "X")
-        {
-            WinnerX(btnText1, btnText5, btnText9); 
-            btnWritten2 = true;
-            btnWritten3 = true;
-            btnWritten4 = true;
-            btnWritten6 = true;
-            btnWritten7 = true;
-            btnWritten8 = true;
-        }
-        if (btnText3.text == "X" && btnText5.text == "X" && btnText7.text == "X")
-        {
-            WinnerX(btnText3, btnText5, btnText7); 
-            btnWritten1 = true;
-            btnWritten2 = true;
-            btnWritten4 = true;
-            btnWritten6 = true;
-            btnWritten8 = true;
-            btnWritten9 = true;
-        }
-        if (btnText2.text == "X" && btnText5.text == "X" && btnText8.text == "X")
-        {
-            WinnerX(btnText2, btnText5, btnText8); 
-            btnWritten1 = true;
-            btnWritten3 = true;
-            btnWritten4 = true;
-            btnWritten6 = true;
-            btnWritten7 = true;
-            btnWritten9 = true;
-        }
-        if (btnText3.text == "X" && btnText6.text == "X" && btnText9.text == "X")
-        {
-            WinnerX(btnText3, btnText6, btnText9); 
-            btnWritten1 = true;
-            btnWritten2 = true;
-            btnWritten4 = true;
-            btnWritten5 = true;
-            btnWritten7 = true;
-            btnWritten8 = true;
-        }
-        if (btnText4.text == "X" && btnText5.text == "X" && btnText6.text == "X")
-        {
-            WinnerX(btnText4, btnText5, btnText6); 
-            btnWritten1 = true;
-            btnWritten2 = true;
-            btnWritten3 = true;
-            btnWritten7 = true;
-            btnWritten8 = true;
-            btnWritten9 = true;
-        }
-        if (btnText7.text == "X" && btnText8.text == "X" && btnText9.text == "X")
-        {
-            WinnerX(btnText7, btnText8, btnText9); 
-            btnWritten1 = true;
-            btnWritten2 = true;
-            btnWritten3 = true;
-            btnWritten4 = true;
-            btnWritten5 = true;
-            btnWritten6 = true;
-        }
-        //============================Player O================================
-        if (btnText1.text == "O" && btnText2.text == "O" && btnText3.text == "O")
-        {
-            WinnerO(btnText1, btnText2, btnText3);
-            btnWritten4 = true;
-            btnWritten5 = true;
-            btnWritten6 = true;
-            btnWritten7 = true;
-            btnWritten8 = true;
-            btnWritten9 = true;
-        }
+            if (btnText1.text == "X")
+            {
+                WinnerX(btnText1, btnText2, btnText3);
+            }
+            else if (btnText1.text == "O")
+            {
+                WinnerO(btnText1, btnText2, btnText3);
+            }
 
-        if (btnText1.text == "O" && btnText4.text == "O" && btnText7.text == "O")
-        {
-            WinnerO(btnText1, btnText4, btnText7);
-            btnWritten2 = true;
-            btnWritten3 = true;
-            btnWritten5 = true;
-            btnWritten6 = true;
-            btnWritten8 = true;
-            btnWritten9 = true;
         }
-
-        if (btnText1.text == "O" && btnText5.text == "O" && btnText9.text == "O")
+        //Case 2: 1-4-7
+        if (btnText1 != null && btnText1.text == btnText4.text && btnText4.text == btnText7.text)
         {
-            WinnerO(btnText1, btnText5, btnText9);
-            btnWritten2 = true;
-            btnWritten3 = true;
-            btnWritten4 = true;
-            btnWritten6 = true;
-            btnWritten7 = true;
-            btnWritten8 = true;
+            if (btnText1.text == "X")
+            {
+                WinnerX(btnText1, btnText4, btnText7);
+            }
+            else if (btnText1.text == "O")
+            {
+                WinnerO(btnText1, btnText4, btnText7);
+            }
         }
-
-        if (btnText3.text == "O" && btnText5.text == "O" && btnText7.text == "O")
+        //Case 3: 1-5-9
+        if (btnText1 != null && btnText1.text == btnText5.text && btnText5.text == btnText9.text)
         {
-            WinnerO(btnText3, btnText5, btnText7);
-            btnWritten1 = true;
-            btnWritten2 = true;
-            btnWritten4 = true;
-            btnWritten6 = true;
-            btnWritten8 = true;
-            btnWritten9 = true;
+            if (btnText1.text == "X" && btnText5.text == "X" && btnText9.text == "X")
+            {
+                WinnerX(btnText1, btnText5, btnText9);
+            }
+            else if (btnText1.text == "O")
+            {
+                WinnerO(btnText1, btnText5, btnText9);
+            }
         }
-
-        if (btnText2.text == "O" && btnText5.text == "O" && btnText8.text == "O")
+        //Case 4: 3-5-7
+        if (btnText3 != null && btnText3.text == btnText5.text && btnText5.text == btnText7.text)
         {
-            WinnerO(btnText2, btnText5, btnText8);
-            btnWritten1 = true;
-            btnWritten3 = true;
-            btnWritten4 = true;
-            btnWritten6 = true;
-            btnWritten7 = true;
-            btnWritten9 = true;
+            if (btnText3.text == "X")
+            {
+                WinnerX(btnText3, btnText5, btnText7);
+            }
+            else if (btnText3.text == "O")
+            {
+                WinnerO(btnText3, btnText5, btnText7);
+            }
         }
-
-        if (btnText3.text == "O" && btnText6.text == "O" && btnText9.text == "O")
+        //Case 5: 2-5-8
+        if (btnText2 != null && btnText2.text == btnText5.text && btnText5.text == btnText8.text)
         {
-            WinnerO(btnText3, btnText6, btnText9);
-            btnWritten1 = true;
-            btnWritten2 = true;
-            btnWritten4 = true;
-            btnWritten5 = true;
-            btnWritten7 = true;
-            btnWritten8 = true;
+            if (btnText2.text == "X")
+            {
+                WinnerX(btnText2, btnText5, btnText8);
+            }
+            else if (btnText2.text == "O")
+            {
+                WinnerO(btnText2, btnText5, btnText8);
+            }
         }
-
-        if (btnText4.text == "O" && btnText5.text == "O" && btnText6.text == "O")
+        //Case 6: 3-6-9
+        if (btnText3 != null && btnText3.text == btnText6.text && btnText6.text == btnText9.text)
         {
-            WinnerO(btnText4, btnText5, btnText6);
-            btnWritten1 = true;
-            btnWritten2 = true;
-            btnWritten3 = true;
-            btnWritten7 = true;
-            btnWritten8 = true;
-            btnWritten9 = true;
+            if (btnText3.text == "X")
+            {
+                WinnerX(btnText3, btnText6, btnText9);
+            }
+            else if (btnText3.text == "O")
+            {
+                WinnerO(btnText3, btnText6, btnText9);
+            }
         }
-
-        if (btnText7.text == "O" && btnText8.text == "O" && btnText9.text == "O")
+        //Case 7: 4-5-6
+        if (btnText4 != null && btnText4.text == btnText5.text && btnText5.text == btnText6.text)
         {
-            WinnerO(btnText7, btnText8, btnText9);
-            btnWritten1 = true;
-            btnWritten2 = true;
-            btnWritten3 = true;
-            btnWritten4 = true;
-            btnWritten5 = true;
-            btnWritten6 = true;
+            if (btnText4.text == "X")
+            {
+                WinnerX(btnText4, btnText5, btnText6);
+            }
+            else if (btnText4.text == "O")
+            {
+                WinnerO(btnText4, btnText5, btnText6);
+            }
+        }
+        //Case 8: 7-8-9
+        if (btnText7 != null && btnText7.text == btnText8.text && btnText8.text == btnText9.text)
+        {
+            if (btnText7.text == "X")
+            {
+                WinnerX(btnText7, btnText8, btnText9);
+            }
+            else if (btnText7.text == "O")
+            {
+                WinnerO(btnText7, btnText8, btnText9);
+            }
         }
 
     }
+
+
 
     public void btnText1_Click()
     {
@@ -440,6 +386,7 @@ public class TicTacToeCodes : MonoBehaviour
         btnText9.text = "";
         msgFeedback.text = "";
         msgTurn.text = "X TURN";
+        checker = false;
         btnWritten1 = false;
         btnWritten2 = false;
         btnWritten3 = false;
@@ -449,6 +396,7 @@ public class TicTacToeCodes : MonoBehaviour
         btnWritten7 = false;
         btnWritten8 = false;
         btnWritten9 = false;
+        
 
         btnText1.color = Color.black;
         btnText2.color = Color.black;
